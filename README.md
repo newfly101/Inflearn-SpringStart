@@ -1,6 +1,6 @@
 # 인프런 무료 강의 사이트 링크
 
-<img src="https://cdn.inflearn.com/assets/brand/logo.png" width="90px" height="15px" /><a href="https://www.inflearn.com/course/스프링-입문-스트링부트" target="_blank" >
+<img src="https://cdn.inflearn.com/assets/brand/logo.png" width="90px" height="15px" /><a href="https://inf.run/hivx6" target="_blank" >
 <span >Spring-입문 링크</span></a>
 
 * 스프링 부트 3.0 이상을 사용해주세요.
