@@ -21,7 +21,7 @@ public class MemoryMemberRepository implements MemberRepository {
 
     @Override
     public Optional<Member> findById(String id) {
-        return Optional.empty();
+        return store.get(id);
     }
 
     @Override
