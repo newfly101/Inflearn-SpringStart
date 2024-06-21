@@ -1,6 +1,8 @@
 package com.daybreak.inflearnspring.repository;
 
 import com.daybreak.inflearnspring.model.Member;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.List;
@@ -9,6 +11,7 @@ import java.util.Optional;
 
 public class MemoryMemberRepository implements MemberRepository {
 
+    private static final Logger log = LoggerFactory.getLogger(MemoryMemberRepository.class);
     private static Map<Long, Member> store = new HashMap<>();
     private static long sequence = 0L;
 
@@ -26,6 +29,8 @@ public class MemoryMemberRepository implements MemberRepository {
 
     @Override
     public Optional<Member> findByName(String name) {
+        log.debug("store.values.stream => {}",store.values().stream().toString());
+
         return store.values().stream()
                 .filter(member -> member.getName().equals(name))
                 .findAny();
