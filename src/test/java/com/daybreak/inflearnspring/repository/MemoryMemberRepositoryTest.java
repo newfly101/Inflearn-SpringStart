@@ -1,6 +1,7 @@
 package com.daybreak.inflearnspring.repository;
 
 import com.daybreak.inflearnspring.model.Member;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -12,6 +13,11 @@ import static org.junit.jupiter.api.Assertions.*;
 public class MemoryMemberRepositoryTest {
 
     MemoryMemberRepository repository = new MemoryMemberRepository();
+
+    @AfterEach
+    public void afterEach() {
+        repository.clearStore(); // 메모리를 지워하는 class 생성
+    }
 
     @Test
     public void save() {
