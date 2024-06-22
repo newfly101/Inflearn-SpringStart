@@ -17,6 +17,7 @@ public class MemoryMemberRepositoryTest {
     @AfterEach
     public void afterEach() {
         repository.clearStore(); // 메모리를 지워하는 class 생성
+        // 의존관계를 지워주는 방법을 추가
     }
 
     @Test
