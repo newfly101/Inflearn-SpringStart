@@ -2,6 +2,7 @@ package com.daybreak.inflearnspring.service;
 
 import com.daybreak.inflearnspring.model.Member;
 import com.daybreak.inflearnspring.repository.MemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,6 +14,7 @@ public class MemberService {
     private final MemberRepository memberRepository;
 
     // 외부에서 넣어주도록 변경함
+    @Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
