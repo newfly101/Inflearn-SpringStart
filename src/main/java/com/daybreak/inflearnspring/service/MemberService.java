@@ -5,6 +5,7 @@ import com.daybreak.inflearnspring.repository.MemberRepository;
 import com.daybreak.inflearnspring.repository.MemoryMemberRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 public class MemberService {
 
@@ -34,6 +35,10 @@ public class MemberService {
 
     /** 전체 회원 조회 **/
     public List<Member> findMembers() {
+        return memberRepository.findAll();
+    }
 
+    public Optional<Member> findMember(long memberId) {
+        return memberRepository.findById(memberId);
     }
 }
