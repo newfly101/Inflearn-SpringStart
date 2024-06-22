@@ -2,7 +2,6 @@ package com.daybreak.inflearnspring.service;
 
 import com.daybreak.inflearnspring.model.Member;
 import com.daybreak.inflearnspring.repository.MemberRepository;
-import com.daybreak.inflearnspring.repository.MemoryMemberRepository;
 
 import java.util.List;
 import java.util.Optional;
