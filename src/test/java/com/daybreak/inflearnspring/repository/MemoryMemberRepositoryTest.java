@@ -24,4 +24,19 @@ public class MemoryMemberRepositoryTest {
         assertEquals(member, result); // true 시 결과물 출력x
         assertThat(member).isEqualTo(result); // check하는 방식3
     }
+
+    @Test
+    public void findByName() {
+        Member member1 = new Member();
+        member1.setName("KimDawn");
+        repository.save(member1);
+
+        Member member2 = new Member();
+        member2.setName("KimSpace");
+        repository.save(member2);
+
+        Member result = repository.findByName("KimDawn").get();
+
+        assertThat(result).isSameAs(member1);
+    }
 }
