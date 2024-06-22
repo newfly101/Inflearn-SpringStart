@@ -2,13 +2,12 @@ package com.daybreak.inflearnspring.service;
 
 import com.daybreak.inflearnspring.model.Member;
 import com.daybreak.inflearnspring.repository.MemoryMemberRepository;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.fail;
 
 
 class MemberServiceTest {
@@ -16,8 +15,15 @@ class MemberServiceTest {
     // 빌드될때는 실제 코드에 포함되지 않음
     // shift F10 누르면 이전에 실행된 코드를 재실행 해줌
 
-    MemberService memberService = new MemberService();
-    MemoryMemberRepository memberRepository = new MemoryMemberRepository();
+    MemberService memberService;
+    MemoryMemberRepository memberRepository;
+
+    // dependency injection
+    @BeforeEach
+    public void beforeEach() {
+        memberRepository = new MemoryMemberRepository();
+        memberService = new MemberService(memberRepository);
+    }
 
     // 각각 Test 사이에 초기화 진행
     @AfterEach
