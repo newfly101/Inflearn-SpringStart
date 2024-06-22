@@ -2,7 +2,6 @@ package com.daybreak.inflearnspring.repository;
 
 import com.daybreak.inflearnspring.model.Member;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
