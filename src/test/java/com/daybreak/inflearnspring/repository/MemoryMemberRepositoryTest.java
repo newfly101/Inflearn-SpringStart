@@ -4,6 +4,8 @@ import com.daybreak.inflearnspring.model.Member;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -14,7 +16,7 @@ public class MemoryMemberRepositoryTest {
     @Test
     public void save() {
         Member member = new Member();
-        member.setName("kimJaeHong");
+        member.setName("KimDawn");
 
         repository.save(member);
 
@@ -38,5 +40,20 @@ public class MemoryMemberRepositoryTest {
         Member result = repository.findByName("KimDawn").get();
 
         assertThat(result).isSameAs(member1);
+    }
+
+    @Test
+    public void findAll() {
+        Member member1 = new Member();
+        member1.setName("KimDawn");
+        repository.save(member1);
+
+        Member member2 = new Member();
+        member2.setName("KimSpace");
+        repository.save(member2);
+
+        List<Member> members = repository.findAll();
+
+        assertThat(members.size()).isEqualTo(2);
     }
 }
