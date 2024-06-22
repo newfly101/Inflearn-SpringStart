@@ -4,8 +4,6 @@ import com.daybreak.inflearnspring.model.Member;
 import com.daybreak.inflearnspring.repository.MemberRepository;
 import com.daybreak.inflearnspring.repository.MemoryMemberRepository;
 
-import java.util.Optional;
-
 public class MemberService {
 
     private final MemberRepository memberRepository = new MemoryMemberRepository();
@@ -20,11 +18,15 @@ public class MemberService {
 //            throw new IllegalStateException("이미 존재하는 회원입니다.");
 //        });
 
+        validateDuplicateMember(member);
+        memberRepository.save(member);
+        return member.getId();
+    }
+
+    private void validateDuplicateMember(Member member) {
         memberRepository.findByName(member.getName())
                 .ifPresent(m -> {
                     throw new IllegalStateException("이미 존재하는 회원입니다.");
                 });
-        memberRepository.save(member);
-        return member.getId();
     }
 }
