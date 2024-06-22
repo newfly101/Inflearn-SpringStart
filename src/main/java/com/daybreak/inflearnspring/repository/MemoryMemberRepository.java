@@ -3,9 +3,11 @@ package com.daybreak.inflearnspring.repository;
 import com.daybreak.inflearnspring.model.Member;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
+@Repository
 public class MemoryMemberRepository implements MemberRepository {
 
     private static final Logger log = LoggerFactory.getLogger(MemoryMemberRepository.class);
