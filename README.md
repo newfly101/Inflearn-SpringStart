@@ -8,3 +8,8 @@
 * 자바 17 이상을 사용해주세요.
 
 * commit 하면서 상세 내용 commit에 작성하는 방식으로 진행 예정
+
+
+* 2024-06-25 환불 사건 때문에 readme만 정리함
+
+![adfadf](https://github.com/newfly101/Inflearn-SpringStart/assets/62008619/53dea258-1317-466e-a228-8af023ecb8b7)
