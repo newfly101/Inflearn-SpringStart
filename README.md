@@ -7,3 +7,12 @@
 * 스프링 부트 3.0 이상을 사용해주세요.
 * 자바 17 이상을 사용해주세요.
 ㆍ7/1부터 재시작
+
+### 포트 날리는 법
+* linux
+netstat -a -o | grep '3000'
+* windows
+netstat -a -o | findstr '3000'
+
+ex)   TCP    0.0.0.0:3000           SERVER-L5PRNR1:0       LISTENING       23288
+* taskkill /pid 23288 /f
