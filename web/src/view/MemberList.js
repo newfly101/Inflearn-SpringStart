@@ -34,8 +34,8 @@ const MemberList = () => {
                 </thead>
                 <tbody>
                 {members && members.map((member, index) => (
-                    <tr key={index}>
-                        <td>{index + 1}</td>
+                    <tr key={member.id}>
+                        <td>{member.id}</td>
                         <td>{member.name}</td>
                     </tr>
                 ))}
