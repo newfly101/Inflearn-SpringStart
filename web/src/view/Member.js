@@ -10,7 +10,7 @@ const Member = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         // alert(userName);
-        await axios.post('http://localhost:3000/members/new', {
+        await axios.post('/members/new', {
             name: userName
         }).then((res) => {
             console.log(res.data);
