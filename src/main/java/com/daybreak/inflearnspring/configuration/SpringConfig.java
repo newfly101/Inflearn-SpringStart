@@ -1,4 +1,4 @@
-package com.daybreak.inflearnspring.config;
+package com.daybreak.inflearnspring.configuration;
 
 import com.daybreak.inflearnspring.repository.MemberRepository;
 import com.daybreak.inflearnspring.repository.MemoryMemberRepository;
