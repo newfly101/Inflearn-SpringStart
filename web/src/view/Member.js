@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from "axios";
 
 const Member = () => {
     const [userName, setUserName] = React.useState('');
@@ -6,9 +7,16 @@ const Member = () => {
         setUserName(name);
         console.log(userName);
     }
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        alert(userName);
+        // alert(userName);
+        await axios.post('http://localhost:3000/members/new', {
+            name: userName
+        }).then((res) => {
+            console.log(res.data);
+        }).catch((err) => {
+            console.log(err);
+        })
         setUserName('');
     }
     return (
